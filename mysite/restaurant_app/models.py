@@ -1,5 +1,3 @@
-from platform import machine
-
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -12,7 +10,6 @@ class RestaurantList(models.Model):
     address = models.CharField(max_length=64)
     title_hotline = models.CharField(max_length=32)
     phone_number = PhoneNumberField()
-
 
 class AboutRestaurant(models.Model):
     headline = models.CharField(max_length=32)
