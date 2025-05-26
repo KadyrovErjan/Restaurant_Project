@@ -3,7 +3,7 @@ from modeltranslation.translator import TranslationOptions,register
 
 @register(RestaurantList)
 class RestaurantListTranslationOptions(TranslationOptions):
-    fields = ('headline', 'title', 'description', 'title_location', 'address', 'title_hotline')
+    fields = ('headline', 'description', 'title_location', 'address', 'title_hotline')
 
 
 @register(AboutRestaurant)
@@ -38,7 +38,7 @@ class ProductDrinksTranslationOptions(TranslationOptions):
 
 @register(MainMenu)
 class MainMenuTranslationOptions(TranslationOptions):
-    fields = ('headline', 'title' )
+    fields = ('headline', 'title')
 
 @register(ModernInterior)
 class ModernInteriorTranslationOptions(TranslationOptions):
