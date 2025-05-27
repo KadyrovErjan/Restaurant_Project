@@ -2,7 +2,7 @@ from .models import *
 from .serializers import *
 from rest_framework import  generics
 from django_filters.rest_framework import DjangoFilterBackend
-from .filters import ProductFilter, CategoryFilter
+from .filters import ProductFilter
 from rest_framework.filters import OrderingFilter
 
 class RestaurantListAPIView(generics.ListAPIView):
@@ -61,5 +61,3 @@ class ModernInteriorListAPIView(generics.ListAPIView):
 class CategoryDetailAPIView(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategoryDetailSerializer
-    filter_backends = [DjangoFilterBackend]
-    filterset_class = CategoryFilter

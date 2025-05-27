@@ -1,4 +1,4 @@
-from .models import Product, Category
+from .models import Product
 from django_filters import FilterSet
 
 
@@ -9,11 +9,3 @@ class ProductFilter(FilterSet):
             'category': ['exact'],
             'price': ['gt', 'lt'],
         }
-
-class CategoryFilter(FilterSet):
-    class Meta:
-        model = Category
-        fields = {
-            'category': ['exact'],
-        }
-
