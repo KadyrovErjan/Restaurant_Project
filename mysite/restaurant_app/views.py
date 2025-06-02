@@ -3,7 +3,7 @@ from .serializers import *
 from rest_framework import  generics
 from django_filters.rest_framework import DjangoFilterBackend
 from .filters import ProductFilter
-from rest_framework.filters import OrderingFilter
+from rest_framework.filters import SearchFilter
 
 class RestaurantListAPIView(generics.ListAPIView):
     queryset = RestaurantList.objects.all()
@@ -39,9 +39,9 @@ class CategoryListAPIView(generics.ListAPIView):
 class ProductListAPIView(generics.ListAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductListSerializer
-    filter_backends = [DjangoFilterBackend, OrderingFilter]
+    filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_class = ProductFilter
-    ordering_fields = ['price']
+    search_fields = ['product_name']
 
 
 class ProductDetailAPIView(generics.RetrieveAPIView):
